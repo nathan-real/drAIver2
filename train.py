@@ -15,7 +15,7 @@ from torch.utils.data import DataLoader, Dataset, WeightedRandomSampler
 from model import SteeringNet
 from processing import process_frame
 
-DRIVING_RUNS = "dataset/dataset/run_*"
+DRIVING_RUNS = "dataset/driving/run_*"
 RECOVERY_RUNS = "dataset/recovery/run_*"
 VAL_DRIVING_RUN = "run_20261025_152111"  # Session complète gardée pour le test
 VAL_RECOVERY_EVERY = 10  # 1 clip de récupération sur 10 gardé pour le test
