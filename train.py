@@ -141,13 +141,14 @@ def evaluate(model, images, steering, weights, device):
     return ((torch.cat(squared_errors) * weights).sum() / weights.sum()).item()
 
 
-def save_plot(train_losses, val_losses):
+def save_plot(train_losses, val_losses, ymax=None):
     epochs = range(1, len(train_losses) + 1)
     plt.plot(epochs, train_losses, label="Entraînement")
     plt.plot(epochs, val_losses, label="Test")
     plt.xlabel("Epoch")
     plt.ylabel("Erreur (MSE)")
     plt.title("Courbe d'apprentissage")
+    plt.ylim(0, ymax)
     plt.legend()
     plt.savefig(PLOT_PATH, dpi=150)
     plt.close()
